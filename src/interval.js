@@ -4,6 +4,8 @@ class Interval {
         this.end = end
     }
 
+    // COMMAND CONSOLE FOR CODE COVERAGE "node_modules/.bin/jest --coverage"
+
     toString() {
         return "[" + this.start + "," + this.end + "]";
     }
@@ -43,7 +45,7 @@ class Interval {
      * @returns {boolean}
      */
     includes(interval) {
-
+        return this.end > interval.end && this.start < interval.start;
     };
 
     /**
@@ -63,7 +65,24 @@ class Interval {
      * @returns {Interval[]}
      */
     union(interval) {
-
+        let tab_interval = [];
+        // 2 intervals sont dissociés => 
+        if(this.end < interval.start || this.start > interval.end) {
+            tab_interval.push(this);
+            tab_interval.push(interval);
+        // Exemple 1 (dans les 2 sens)
+        } else if(this.end > interval.start) {
+            let interFusion = new Interval();
+            interFusion.start = this.start;
+            interFusion.end = interval.end;
+            tab_interval.push(interFusion);
+        } else if(this.start > interval.end) {
+            let interFusion = new Interval();
+            interFusion.start = interval.start;
+            interFusion.end = this.end;
+            tab_interval.push(interFusion);
+        }
+        return tab_interval;
     };
 
     /**
@@ -83,7 +102,8 @@ class Interval {
      * @returns {Interval|null}
      */
     intersection(interval) {
-
+        let tab_intersec = [];
+        
     };
 
     /**
