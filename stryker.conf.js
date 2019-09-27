@@ -5,12 +5,14 @@
   "mutator": "javascript",
   "packageManager": "npm",
   "reporters": [
+    "html",
     "clear-text",
-    "progress"
+    "progress",
+    "dashboard"
   ],
-  "testRunner": "command",
+  "testRunner": "jest",
   "transpilers": [],
-  "coverageAnalysis": "all"
+  "coverageAnalysis": "off"
 }
         );
       }
