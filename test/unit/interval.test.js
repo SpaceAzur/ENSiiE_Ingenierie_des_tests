@@ -12,7 +12,6 @@ test("No commom interval", () => {
     expect(interval1.overlaps(interval2)).toBeFalsy;
 });
 
-
 test("Interval is include", () => {
     const interval1 = new Interval(2,10);
     const interval2 = new Interval(4,9);
