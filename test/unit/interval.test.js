@@ -24,14 +24,9 @@ test("Interval is NOT include", () => {
     expect(interval1.includes(interval2)).toBeFalsy;
 });
 
-// test("Two intervals are Unified", () => {
-//     const interval1 = new Interval(2,10);
-//     const interval2 = new Interval(6,15);
-//     expect(interval1.union(interval2)).toContain([{"end":15,"start":2}]);
-// });
+test("Two intervals are Unified", () => {
+    const interval1 = new Interval(2,10);
+    const interval2 = new Interval(6,15);
+    expect(interval1.union(interval2)).toEqual(expect.arrayContaining([expect.objectContaining({"end":15,"start":2})]));
+});
 
-// test("Two separate intervals return two intervals", () => {
-//     const interval1 = new Interval(2,8);
-//     const interval2 = new Interval(10,15);
-//     expect(interval1.union(interval2)).toContain([{"end":8,"start":2},{"end":15,"start":10}]);
-// });
