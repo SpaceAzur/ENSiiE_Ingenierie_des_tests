@@ -23,7 +23,12 @@ class BookRepository {
      * Somme du prix de tous les livre
      */
     getTotalPrice() {
-        return 
+        let sum = 0.0;
+        for(let i of this.db.get('books').value()) {
+            let tmp = i.price;
+            sum = sum + tmp;
+        };
+        return sum;
     }
 
 
@@ -31,7 +36,13 @@ class BookRepository {
      * Retourne un livre
      */
     getBookByName(bookName) {
-
+        let tmp = "";
+        for(let i of this.db.get('books').value()) {
+            while(i.name === bookName) {
+                return i;
+            }
+        }
+        return "book not found";
     }
 
     /**

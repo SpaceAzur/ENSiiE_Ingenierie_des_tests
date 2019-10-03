@@ -2,27 +2,27 @@
   "books": [
     {
       "id": 1,
-      "name": "test",
+      "name": "tata",
       "price": 6.1,
+      "added_at": "2018-01-01"
+    },
+    {
+      "id": 2,
+      "name": "testa",
+      "price": 7.1,
       "added_at": "2019-01-01"
     },
     {
-      "id": 1,
-      "name": "test",
-      "price": 6.1,
-      "added_at": "2019-01-01"
+      "id": 3,
+      "name": "zozo",
+      "price": 4.2,
+      "added_at": "2019-03-01"
     },
     {
-      "id": 1,
-      "name": "test",
-      "price": 6.1,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 6.1,
-      "added_at": "2019-01-01"
+      "id": 4,
+      "name": "zaza",
+      "price": 4.2,
+      "added_at": "2018-02-01"
     }
   ]
 }
