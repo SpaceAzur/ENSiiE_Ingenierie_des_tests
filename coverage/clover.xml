@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1570182249318" clover="3.2.0">
-  <project timestamp="1570182249319" name="All files">
-    <metrics statements="149" coveredstatements="94" conditionals="78" coveredconditionals="50" methods="22" coveredmethods="15" elements="249" coveredelements="159" complexity="0" loc="149" ncloc="149" packages="2" files="4" classes="4"/>
+<coverage generated="1570192850904" clover="3.2.0">
+  <project timestamp="1570192850905" name="All files">
+    <metrics statements="136" coveredstatements="99" conditionals="76" coveredconditionals="50" methods="20" coveredmethods="17" elements="232" coveredelements="166" complexity="0" loc="136" ncloc="136" packages="2" files="4" classes="4"/>
     <package name="tp-jest">
       <metrics statements="18" coveredstatements="8" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <file name="sum.js" path="/home/antoine/Bureau/MyGitHub/tp-jest/sum.js">
@@ -27,34 +27,21 @@
       </file>
     </package>
     <package name="tp-jest.src">
-      <metrics statements="131" coveredstatements="86" conditionals="72" coveredconditionals="50" methods="20" coveredmethods="14"/>
+      <metrics statements="118" coveredstatements="91" conditionals="70" coveredconditionals="50" methods="18" coveredmethods="16"/>
       <file name="book.repository.js" path="/home/antoine/Bureau/MyGitHub/tp-jest/src/book.repository.js">
-        <metrics statements="25" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="3"/>
-        <line num="7" count="2" type="stmt"/>
+        <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
+        <line num="7" count="4" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="76" count="0" type="stmt"/>
-        <line num="77" count="0" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="81" count="0" type="stmt"/>
-        <line num="90" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
       </file>
       <file name="interval.js" path="/home/antoine/Bureau/MyGitHub/tp-jest/src/interval.js">
         <metrics statements="70" coveredstatements="45" conditionals="48" coveredconditionals="28" methods="7" coveredmethods="7"/>
