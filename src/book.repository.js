@@ -23,14 +23,17 @@ class BookRepository {
      * Somme du prix de tous les livre
      */
     getTotalPrice() {
-        let sum = 0.0;
-        for(let i of this.db.get('books').value()) {
-            let tmp = i.price;
-            sum = sum + tmp;
-        };
-        return sum;
+        // let sum = 0.0;
+        // for(let i of this.db.get('books').value()) {
+        //     let tmp = i.price;
+        //     sum = sum + tmp;
+        // };
+        // return sum;
+        const gPrice = this.db.get('books').value().reduce(function(foo,bar) {
+            return foo + bar.price;
+        },0);
+        return gPrice;
     }
-
 
     /**
      * Retourne un livre
@@ -63,28 +66,29 @@ class BookRepository {
      *      ....
      *  ]
      */
-    getCountBookAddedByMont(bookName) {
-        let toto = this.db.get('books').value();
-        // const calcul = Object.values(toto).reduce(x => x.added_at.slice(0,7))
-        // console.log(calcul);
-        console.log(toto);
-        let groupBy = Object.entries(toto).reduce(function(m,d){
-            if(!m[d.id]){
-                m[d.id] = {...d, count: 1};
-                return m;
-            }
-            m[d.id].yearMonth += d.added_at.slice(0,7);
-            m[d.id].count += 1;
-        },{});
-        const result =Object.keys(groupBy).map(function(k){
-            const item = groupBy[k];
-            return {
-                year: item.yearMonth,
-                count: item.count
-            }
-        })
-    }
-}
+    // getCountBookAddedByMont(bookName) {
+    //     let toto = this.db.get('books').value();
+    //     // const calcul = Object.values(toto).reduce(x => x.added_at.slice(0,7))
+    //     // console.log(calcul);
+    //     console.log(toto);
 
+        
+    //     let groupBy = Object.entries(toto).reduce(function(m,d){
+    //         if(!m[d.id]){
+    //             m[d.id] = {...d, count: 1};
+    //             return m;
+    //         }
+    //         m[d.id].yearMonth += d.added_at.slice(0,7);
+    //         m[d.id].count += 1;
+    //     },{});
+    //     const result =Object.keys(groupBy).map(function(k){
+    //         const item = groupBy[k];
+    //         return {
+    //             year: item.yearMonth,
+    //             count: item.count
+    //         }
+    //     })
+    // }
+}
 
 module.exports = BookRepository;

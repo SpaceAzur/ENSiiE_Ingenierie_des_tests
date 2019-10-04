@@ -34,6 +34,13 @@ for(let i of dico.books) {
     console.log(year, months, yM);
 };
 
+const groupPrice = dico.books.map(x => x.price);
+console.log("groupPrice 1" ,groupPrice);
+const gPrice = dico.books.reduce(function(foo=0,bar) {
+    return foo + bar.price;
+},0);
+console.log("groupPrice 2 ", gPrice);
+
 // getCountBookAddedByMont()
 const groupBy = dico.books.map(x => x.added_at.slice(0,7)); // YES !!!
 console.log(groupBy)
