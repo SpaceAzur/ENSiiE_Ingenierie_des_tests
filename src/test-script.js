@@ -25,22 +25,19 @@ console.log("total price ", aa);
 
 console.log(repository.getBookByName("tata"));
 
-let myDict = [];
-
-myDict.push({
-    year:   "2018",
-    month:  "feb"
-});
-console.log(myDict)
-
 let cpt = 0;
 for(let i of dico.books) {
     let year = i.added_at.substring(0,4);
     let months = i.added_at.substring(5,7);
+    let yM = i.added_at.slice(0,7);
     cpt++;
-    console.log(year, months);
+    console.log(year, months, yM);
 };
-console.log(cpt);
+
+// getCountBookAddedByMont()
+const groupBy = dico.books.map(x => x.added_at.slice(0,7)); // YES !!!
+console.log(groupBy)
+
 
 
 // *  [

@@ -120,6 +120,7 @@ class Interval {
     intersection(interval) {
         let tab_intersec = [];
         let point = 0;
+        let interSection = new Interval();
         // cas NO intersection
         if( (this.end-interval.start) < 0 || (interval.end-this.start) < 0 ) {
             return tab_intersec;
@@ -133,11 +134,15 @@ class Interval {
         }
         // cas interection : THIS devant Interval
         else if( (this.end-interval.start) > 0 ) {
-            return point = this.end-interval.start;
+            interSection.start = this.start;
+            interSection.end = interval.end;
+            return interSection;
         } 
         // cas intersection : Interval devant THIS
         else if( (interval.start-this.end) > 0 ) { 
-            return point = interval.end-this.start;
+            interSection.start = interval.start;
+            interSection.end = this.end;
+            return interSection;
         }
     };
 
@@ -164,8 +169,6 @@ class Interval {
         if( (interval.start-this.end) >= 0 || (this.start-interval.end) >= 0 ) {
             tab_exclu.push(this);
             tab_exclu.push(interval);
-            console.log(this); console.log(interval);
-            console.log(tab_exclu);
             return tab_exclu;
         }
         else if( interval.start > this.end && interval.end > this.end && this.start < interval.start) {
@@ -175,8 +178,6 @@ class Interval {
             exclu2.end = interval.end;
             tab_exclu.push(exclu1);
             tab_exclu.push(exclu2);
-            console.log(this); console.log(interval);
-            console.log(tab_exclu);
             return tab_exclu;
         }
         else if( this.start > interval.start && this.start < interval.end && this.end > interval.end) {
@@ -186,16 +187,9 @@ class Interval {
             exclu2.end = this.end;
             tab_exclu.push(exclu1);
             tab_exclu.push(exclu2);
-            console.log(this); console.log(interval);
-            console.log(tab_exclu);
             return tab_exclu;
         }
     };
 }
-
-const interval1 = new Interval(2,10);
-const interval2 = new Interval(6,15);
-
-console.log(interval1.exclusion(interval2));
 
 module.exports = Interval;
