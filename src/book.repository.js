@@ -36,7 +36,6 @@ class BookRepository {
      * Retourne un livre
      */
     getBookByName(bookName) {
-        let tmp = "";
         for(let i of this.db.get('books').value()) {
             while(i.name === bookName) {
                 return i;
@@ -65,9 +64,26 @@ class BookRepository {
      *  ]
      */
     getCountBookAddedByMont(bookName) {
-
+        let toto = this.db.get('books').value();
+        // const calcul = Object.values(toto).reduce(x => x.added_at.slice(0,7))
+        // console.log(calcul);
+        console.log(toto);
+        let groupBy = Object.entries(toto).reduce(function(m,d){
+            if(!m[d.id]){
+                m[d.id] = {...d, count: 1};
+                return m;
+            }
+            m[d.id].yearMonth += d.added_at.slice(0,7);
+            m[d.id].count += 1;
+        },{});
+        const result =Object.keys(groupBy).map(function(k){
+            const item = groupBy[k];
+            return {
+                year: item.yearMonth,
+                count: item.count
+            }
+        })
     }
-
 }
 
 
